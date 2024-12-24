@@ -93,16 +93,8 @@ This project is a basic reimagination of the classic Google Dinosaur Game, desig
 
 ### Screenshot 2: Gameplay
 ![Gameplay](![Gameplay](https://github.com/user-attachments/assets/6ebcf363-ebbd-4ecb-a7f0-20ef39da2601)
-)
+
 
 ---
 
 We hope you enjoy playing our version of the Dinosaur Game! If you have any questions or suggestions, feel free to create an issue or contact us via [GitHub Issues](https://github.com/yourusername/google-dinosaur-game/issues).
-)
-
-### Screenshot 2: Gameplay
-![Gameplay](./screenshots/gameplay.png)
-
----
-
-We hope you enjoy playing our version of the Dinosaur Game! If you have any questions or suggestions, feel free to create an issue or contact us via [GitHub Issues](https://github.com/mehmetyildiiz/First-Project/issues).
