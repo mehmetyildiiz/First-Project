@@ -8,7 +8,7 @@ This project is a basic reimagination of the classic Google Dinosaur Game, desig
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/mehmetyildiiz/First-Project.git
-   cd Basic-Dinosaur-Game
+   cd Basic Dinosaur Game
    ```
 
 2. **Open the Game in a Browser**
