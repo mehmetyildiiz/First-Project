@@ -30,7 +30,7 @@ This project is a basic reimagination of the classic Google Dinosaur Game, desig
 ## Technical Stack
 
 - **Language**: HTML
-- **Game Logic**: HTML
+- **Game Logic**: CSS / JavaScript
 - **Version Control**: Git/GitHub
 
 ## Features List
