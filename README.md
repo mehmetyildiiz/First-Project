@@ -6,10 +6,9 @@ This project is a basic reimagination of the classic Google Dinosaur Game, desig
 ## Installation Instructions
 
 1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/mehmetyildiiz/First-Project.git
-   cd Basic Dinosaur Game
-   ```
+   [git clone](https://github.com/mehmetyildiiz/First-Project.git)
+   cd BasicDinosaurGame
+   
 
 2. **Open the Game in a Browser**
    Simply open the `index.html` file in your preferred web browser.
