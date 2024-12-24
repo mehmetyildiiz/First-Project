@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Dinosaur Game</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: lightblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    canvas {
+      border: 2px solid black;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas" width="600" height="300"></canvas>
+  <script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Dinozor ve Engel
+    let dinoX = 50, dinoY = 200, dinoH = 40, dinoW = 40, dinoDy = 0;
+    let engelX = 600, engelY = 220, engelH = 40, engelW = 40;
+
+    // Yerçekimi ve Puan
+    let yercekimi = 0.5;
+    let puan = 0;
+    let oyunBitti = false;
+
+    // Zıplama
+    document.addEventListener("keydown", function (event) {
+      if (event.code === "Space" && dinoY === 200) {
+        dinoDy = -10; // Zıplama hızı
+      }
+    });
+
+    // Oyun Döngüsü
+    function oyunDongusu() {
+      if (oyunBitti) {
+        ctx.fillStyle = "red";
+        ctx.font = "20px Arial";
+        ctx.fillText("Game Over! Press F5 to Restart", 150, 150);
+        return;
+      }
+
+      // Temizle
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Dinozor Çiz
+      ctx.fillStyle = "green";
+      ctx.fillRect(dinoX, dinoY, dinoW, dinoH);
+
+      // Dinozor Hareketi
+      dinoY += dinoDy;
+      if (dinoY < 200) {
+        dinoDy += yercekimi; // Dino yerçekimi etkisi
+      } else {
+        dinoY = 200;
+        dinoDy = 0; // Dino yere düştü
+      }
+
+      // Engel Çiz ve Hareket Ettir
+      ctx.fillStyle = "red";
+      ctx.fillRect(engelX, engelY, engelW, engelH);
+      engelX -= 5;
+
+      // Engel Ekranı Geçtiyse Sıfırla
+      if (engelX < -40) {
+        engelX = 600;
+        puan++;
+      }
+
+      // Çarpışma Kontrolü
+      if (
+        dinoX < engelX + engelW &&
+        dinoX + dinoW > engelX &&
+        dinoY < engelY + engelH &&
+        dinoY + dinoH > engelY
+      ) {
+        oyunBitti = true;
+      }
+
+      // Puanı Göster
+      ctx.fillStyle = "black";
+      ctx.font = "16px Arial";
+      ctx.fillText("Score: " + puan, 10, 20);
+
+      // Oyun Döngüsünü Tekrarla
+      requestAnimationFrame(oyunDongusu);
+    }
+
+    // Oyun Başlat
+    oyunDongusu();
+  </script>
+</body>
+</html>
